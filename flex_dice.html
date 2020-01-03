@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+     .box{
+       display: flex;
+       width: 300px;
+       height: 300px;
+       margin: 50px  auto;
+       border: 1px solid black;
+
+     }
+     .point{
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+     }
+     /* 点数1 ，水平垂直居中 */
+    .dice1{
+      justify-content: center;
+      align-items: center;
+    }
+
+     /* 点数2 ，垂直居中, 水平左右有间距，
+     这里并没有要求水平间隔等分，所以不需要 
+     space-evenly */
+     .dice2{
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .dice3{
+      justify-content: space-between;
+    }
+    .am{
+      align-self: center;
+    }
+    .ar{
+      align-self: flex-end;
+    }
+
+    .dice4 {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .dice4 .point{
+      margin: 0 65px;
+    }
+
+    .dice5 {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .dice5 .point{
+      margin: 0 65px;
+    }
+    .dice5 .middle{
+      margin: 0 140px;
+    }
+    .dice6 {
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    /*  
+        2种形态，计算方法都是一样的，设法让item 换行，计算剩余空间  
+       （flexBox 宽度 - 小球个数*小球的宽度）/ 间隔个数 ， 就是左右margin 值
+        html 换结构的话就不需要计算了
+     */
+    .dice6 .point{
+      /* margin: 0 65px; */
+       margin: 0 40px; 
+    }
+  </style>
+</head>
+<body>
+  <div class="box dice1"> 
+    <div class="point"></div>
+  </div>
+
+  <div class="box dice2"> 
+    <div class="point"></div>
+    <div class="point"></div>
+  </div>
+
+  <div class="box dice3"> 
+    <div class="point"></div>
+    <div class="point am"></div>
+    <div class="point ar"></div>
+  </div>
+  <!-- 不改变html 结构平行实现，而不是包起来 -->
+  <div class="box dice4"> 
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+  </div>
+
+  <div class="box dice5"> 
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point middle"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+  </div>
+
+
+  <div class="box dice6"> 
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+    <div class="point"></div>
+  </div>
+
+</body>
+<script>
+   
+</script>
+</html>
